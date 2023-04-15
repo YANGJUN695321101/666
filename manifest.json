@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "拼多多商品抓取器",
+  "version": "1.0",
+  "description": "一个简单的拼多多商品信息抓取插件",
+  "icons": {
+    "48": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "拼多多商品抓取器"
+  },
+  "permissions": [
+    "activeTab",
+    "downloads"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://mobile.pinduoduo.com/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js; object-src 'self'"
+}
